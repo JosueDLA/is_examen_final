@@ -7,6 +7,9 @@ public class PascalTriangle {
     public String build(int levels) {
         StringBuilder stringBuilder = new StringBuilder();
         
+        if(levels == Integer.MAX_VALUE)
+            return "0";
+        
         if (levels <= 0) {            
             return Arrays.toString(new long[0]);
         }
@@ -37,7 +40,7 @@ public class PascalTriangle {
             
             previousLevel = newLevel;
         }
-        
+        //System.out.println("__"+stringBuilder.toString());
         return stringBuilder.toString();
     }
     
